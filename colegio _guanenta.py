@@ -1,6 +1,47 @@
 import tkinter as tk
 from tkinter import messagebox
 
+#---------------------------------
+# Desktop app No. 6 - datos de estudiantes del colegio guanenta
+#---------------------------------
+
+# se importa la libreria tkinter con todas sus funciones
+from tkinter import *
+from tkinter import messagebox
+
+#-----------------------------
+# ventana principal de la app
+#-----------------------------
+
+# se declara una variable llamada ventana_principal, que adquiere las caracteristicas de un objeto Tk()
+ventana_principal = Tk()
+
+# titulo de la ventana
+ventana_principal.title("datos de un estudainte del colegio guanenta ")
+
+# tamaño de la ventana
+ventana_principal.geometry("600x600")
+
+# deshabilitar boton de maximizar
+ventana_principal.resizable(False, False)
+
+# color de fondo de la ventana
+ventana_principal.config(bg="magenta2")
+
+#--------------------------------
+# frame entrada datos
+#--------------------------------
+frame_entrada = Frame(ventana_principal)
+frame_entrada.config(bg="white", width=260, height=300)
+frame_entrada.place(x=40, y=40)
+
+# logo de la app
+logo = PhotoImage(file="img/escudo.png")
+lb_logo = Label(frame_entrada, image=logo, bg="white")
+lb_logo.place(x=25,y=25)
+
+
+#se desea calcular las notas
 def calcular_notas():
     nota_1 = float(entry_nota_1.get())
     nota_2 = float(entry_nota_2.get())
@@ -50,20 +91,21 @@ root.title("Cálculo de notas, masa corporal y salud")
 label_notas = tk.Label(root, text="Notas del estudiante")
 label_notas.grid(row=0, column=0, padx=10, pady=5)
 
-label_nota_1 = tk.Label(root, text="Nota 1:")
+label_nota_1 = tk.Label(root, text="Nota 1: COGNITIVA:")
 label_nota_1.grid(row=1, column=0, padx=10, pady=5)
 entry_nota_1 = tk.Entry(root)
 entry_nota_1.grid(row=1, column=1, padx=10, pady=5)
 
-label_nota_2 = tk.Label(root, text="Nota 2:")
+label_nota_2 = tk.Label(root, text="Nota 2: ACTITUDINAL:")
 label_nota_2.grid(row=2, column=0, padx=10, pady=5)
 entry_nota_2 = tk.Entry(root)
 entry_nota_2.grid(row=2, column=1, padx=10, pady=5)
 
-label_nota_3 = tk.Label(root, text="Nota 3:")
+label_nota_3 = tk.Label(root, text="Nota 3: PROCEDIMENTAL:")
 label_nota_3.grid(row=3, column=0, padx=10, pady=5)
 entry_nota_3 = tk.Entry(root)
 entry_nota_3.grid(row=3, column=1, padx=10, pady=5)
+
 
 btn_calcular_notas = tk.Button(root, text="Calcular Notas", command=calcular_notas)
 btn_calcular_notas.grid(row=4, column=0, columnspan=2, padx=10, pady=5)
