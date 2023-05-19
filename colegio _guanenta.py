@@ -32,7 +32,7 @@ ventana_principal.config(bg="magenta2")
 # frame entrada datos
 #--------------------------------
 frame_entrada = Frame(ventana_principal)
-frame_entrada.config(bg="white", width=260, height=300)
+frame_entrada.config(bg="white", width=600, height=300)
 frame_entrada.place(x=40, y=40)
 
 # logo de la app
@@ -40,8 +40,16 @@ logo = PhotoImage(file="img/escudo.png")
 lb_logo = Label(frame_entrada, image=logo, bg="white")
 lb_logo.place(x=25,y=25)
 
+# titulo de la app
+titulo = Label(frame_entrada, text="datos del alumno")
+titulo.config(bg = "white",fg="blue", font=("Helvetica", 30))
+titulo.place(x=220,y=20)
 
-#se desea calcular las notas
+# etiqueta para valor del estudiante
+lb_c = Label(frame_entrada, text = "nombre: = ")
+lb_c.config(bg="white", fg="blue", font=("Helvetica", 18))
+lb_c.place(x=240, y=60)
+
 def calcular_notas():
     nota_1 = float(entry_nota_1.get())
     nota_2 = float(entry_nota_2.get())
